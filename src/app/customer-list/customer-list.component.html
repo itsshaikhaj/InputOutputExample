@@ -1,0 +1,30 @@
+<h2>List of Customers</h2>
+ 
+<table class="table table-dark">
+  <thead>
+    <tr >
+      <th scope="col">No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Country</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers;">
+      <td cope="row">{{customer.customerNo}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.city}}</td>
+      <td>{{customer.state}}</td>
+      <td>{{customer.country}}</td>
+      <td><button (click)="showDetails(customer)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+ 
+<h3>Details</h3>
+<app-customer-detail [customer]="selectedCustomer" (customerChange)="update($event)"></app-customer-detail>
+ 
